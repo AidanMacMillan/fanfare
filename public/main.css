@@ -1,0 +1,40 @@
+:root {
+    --bg-color: #111113;
+	--text-color: #fff;
+	--primary: #7618C9;
+	--secondary: #9F54E1;
+	--primary-dark: #6B00CB; 
+	--menu: #4A008B;
+	--page-width: 1000px;
+
+	--fast: 0.2s;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text);
+	font-family: 'Roboto', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	display: flex;
+	position: relative;
+	width: 100%;
+	padding: 0 10px;
+	max-width: var(--page-width);
+
+	margin: 0 auto;
+}
+
+.page {
+	z-index: -2;
+}
