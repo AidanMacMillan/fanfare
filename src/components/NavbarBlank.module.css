@@ -1,0 +1,22 @@
+.navbar {
+	display: flex;
+	background-image: linear-gradient(var(--primary), var(--primary-dark));
+    align-items: center;
+    height: 72px;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    transition: var(--fast);
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo img {
+    display: block;
+}

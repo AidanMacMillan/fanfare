@@ -44,17 +44,18 @@ UserSchema.pre('save', function(next) {
     })
 })
 
-UserSchema.methods.validPassword = function(password) {
-    return bcrypt.compare(password, this.hash)
+UserSchema.methods.validPassword = async function(password) {
+    return bcrypt.compare(password, this.password);
 }
 
-UserSchema.methods.generateJWT = function(){
+UserSchema.methods.generateJWT = function() {
     var today = new Date();
     var exp = new Date(today);
     exp.setDate(today.getDate()+60);
     return jwt.sign({
         id: this._id,
         username: this.username,
+        isProducer: this.isProducer,
         exp: parseInt(exp.getTime()/1000)
     }, secret)
 };
@@ -62,7 +63,7 @@ UserSchema.methods.generateJWT = function(){
 UserSchema.methods.toAuthJSON = function() {
     return {
         username: this.username,
-        email: this.email,
+        isProducer: this.isProducer,
         token: this.generateJWT()
     }
 }

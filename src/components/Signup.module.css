@@ -1,0 +1,32 @@
+.userTypes {
+    padding-top: 10px;
+}
+
+.userTypes button {
+    display: inline;
+    width: calc(50% - 10px);
+    height: 40px;
+    border-radius: 20px;
+    border:none;
+    color: white;
+    background-color: var(--bg-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.userTypes button:first-child {
+    margin-right: 5px;
+}
+
+.userTypes button:last-child {
+    margin-left: 5px;
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    border:none;
+    color: white;
+}
+
+form .active {
+    background-color: var(--primary);
+}
